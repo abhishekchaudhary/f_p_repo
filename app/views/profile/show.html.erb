@@ -1,0 +1,22 @@
+<h1>Profile</h1>
+<%= form_for :profile, :html => { :multipart => true} do |f| %>
+<%= f.file_field :photo %>
+<%= f.submit  "submit" %>
+<% end %>
+
+
+ 
+    <table border="4" width=100px height=100px>
+  <tr>
+    <td><%= image_tag (@profile).photo.url(:small) %></td>
+  </tr>
+</table>
+   <br>
+USERNAME :  <%= current_authen.username %> <br><br>
+EMAIL : <%= current_authen.email %><br><br>
+COUNTRY : <%= current_authen.country %>
+
+<span style ="position:absolute;right:0;bottom:0">
+  <%= link_to "EDIT ACCOUNT", edit_authen_registration_path %>
+</span>
+ 
